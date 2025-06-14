@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic HTML Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .table-container {
+      width: 90%;
+      max-width: 700px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background 0.3s ease;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      color: #333;
+      font-weight: 600;
+    }
+
+    tr:hover td {
+      background-color: #e3f2fd;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    tr:nth-child(even):hover td {
+      background-color: #dcedf8;
+    }
+
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      td {
+        text-align: left;
+        padding: 12px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="table-container">
+    <h2>User Information Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Name">Gaurav Shinde</td>
+          <td data-label="Age">21</td>
+          <td data-label="City">Pune</td>
+        </tr>
+        <tr>
+          <td data-label="Name">Bhavesh Dhangar</td>
+          <td data-label="Age">22</td>
+          <td data-label="City">Mumbai</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
