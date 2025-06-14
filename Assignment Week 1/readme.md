@@ -41,13 +41,13 @@ A user registration form built using HTML, CSS, and JavaScript with field valida
 ## Output Screenshots
 
 ### Form Interface
-![Form Interface](./assignment-1 img/Doc1_page-0001.jpg)
+![Form Interface](./assignment-1%20img/Doc1_page-0001.jpg)
 
-### Validation in Action
-![Validation Example](./assignment-1 img/Doc1_page-0002.jpg)
+### Validation in Action 
+![Validation Example](./assignment-1%20img/Doc1_page-0002.jpg)
 
 ### Success Message
-![Success Message](./assignment-1 img/Doc1_page-0003.jpg)
+![Success Message](./assignment-1%20img/Doc1_page-0003.jpg)
 
 
 
