@@ -24,8 +24,7 @@ Each assignment contains:
 ## 🧠 Skills & Tools
 - HTML/ CSS/ JavaScript
 - React.js/ Node.js/ Express.js/ MongoDb
-  - Cloud (e.g. AWS/GCP – if applicable)
-  - Unsupervised Learning
+- Cloud (e.g. AWS/GCP – if applicable)
 - Development Tools
   - Git & GitHub
   - VS Code
