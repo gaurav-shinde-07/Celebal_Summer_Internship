@@ -4,7 +4,7 @@ A clean and responsive HTML table implementation with modern styling and user ex
 
 ## Preview
 
-![User Information Table](./assignment-1%20img/img9.jpg)
+![User Information Table Preview](./img9.jpg)
 
 ## Features & Improvements
 
