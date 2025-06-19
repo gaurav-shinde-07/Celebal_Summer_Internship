@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Welcome Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .my-box {
+      background: white;
+      border: 2px solid #4db6ac;
+      padding: 25px 30px;
+      margin: 20px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .my-box:hover {
+      background-color: #e0f2f1;
+      transform: scale(1.03);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .my-box h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .my-box p {
+      color: #444;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="my-box">
+    <img src="celebaltechnologies_logo.jpeg" alt="Welcome Image" style="width:80px; height:80px; border-radius:50%; margin-bottom:10px;">
+    <p>Welcome to Celebal Technologies </p>
+    <p>We Turn Your Hurdles into Decisive Solutions</p>
+  </div>
+
+</body>
+</html>
