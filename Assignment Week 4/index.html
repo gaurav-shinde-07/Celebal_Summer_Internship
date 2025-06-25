@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Responsive Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #222;
+      --accent: #6a0dad;
+      --accent-hover: #8a2be2;
+      --nav-bg: #6a0dad;
+      --nav-link: #fff;
+      --card-bg: #fff;
+      --sidebar-bg: #f6f6f6;
+    }
+
+    body.dark {
+      --bg: #1a1a2e;
+      --text: #f1f1f1;
+      --accent: #a084e8;
+      --accent-hover: #c3aaff;
+      --nav-bg: #11111b;
+      --nav-link: #dcdcdc;
+      --card-bg: #23233d;
+      --sidebar-bg: #2e2e4d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: var(--nav-bg);
+      color: var(--nav-link);
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: var(--nav-link);
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .toggle-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-left: 15px;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .main-content, .sidebar {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, background 0.4s ease;
+    }
+
+    .main-content h2 {
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .main-content .cta {
+      margin-top: 20px;
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .main-content .cta:hover {
+      background: var(--accent-hover);
+    }
+
+    .sidebar {
+      background: var(--sidebar-bg);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+      padding: 10px;
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+    }
+
+    footer {
+      background: var(--nav-bg);
+      color: var(--nav-link);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">MyWebsite</div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2>Welcome to MyWebsite</h2>
+      <p>This modern layout adapts visually based on your preference. Built using a color palette designed for clarity and comfort.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id justo vel arcu fermentum fermentum. Duis eget commodo sapien.</p>
+      <a href="#" class="cta">Get Started</a>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Latest Updates</h3>
+      <ul>
+        <li>✨ New: Dark Mode Toggle</li>
+        <li>🧠 UX Tips for 2025</li>
+        <li>📖 Guide: CSS Grid Explained</li>
+        <li>🎯 Productivity Tools Comparison</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MyWebsite. Crafted with clarity and purpose.</p>
+  </footer>
+
+  <!-- JavaScript for Dark Mode -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
