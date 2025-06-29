@@ -18,7 +18,7 @@ This project is a modern, responsive landing page designed for Celebal Technolog
 
 Below is a preview of the landing page output:
 
-![Landing Page Output Screenshot](./img9.png)
+![Landing Page Output Screenshot](img9.jpg)
 
 ## License
 
