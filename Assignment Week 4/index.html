@@ -56,6 +56,86 @@
       z-index: 999;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+    /* Main nav styling */
+nav ul.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+nav ul.main-nav > li {
+  position: relative;
+}
+
+nav ul.main-nav > li > a {
+  color: var(--nav-link);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+nav ul.main-nav > li > a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Dropdown */
+.dropdown-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+  padding: 8px 0;
+}
+
+.dropdown-content li {
+  padding: 0;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dropdown-content li a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  nav ul.main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+  }
+
+  .dropdown-content li a {
+    padding-left: 24px;
+  }
+}
 
     .nav-container {
       max-width: 1200px;
@@ -196,16 +276,52 @@
   <!-- Header -->
   <header>
     <div class="nav-container">
-      <div class="logo">MyWebsite</div>
+      <div class="logo">
+        <img src="celebaltechnologies_logo.jpeg" alt="Celebal Technologies" style="height:32px; vertical-align:middle; margin-right:10px;">
+        Celebal Technologies
+      </div>
       <nav>
-        <ul>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Services</a></li>
-        </ul>
-      </nav>
-      <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
+  <ul class="main-nav">
+    <li class="dropdown">
+      <a href="#">Services</a>
+      <ul class="dropdown-content">
+        <li><a href="#">Data Engineering</a></li>
+        <li><a href="#">AI / ML</a></li>
+        <li><a href="#">Application Modernization</a></li>
+        <li><a href="#">Biz Apps</a></li>
+        <li><a href="#">Enterprise Data Analytics</a></li>
+        <li><a href="#">Cloud Infrastructure & Security</a></li>
+        <li><a href="#">Enterprise Integration</a></li>
+        <li><a href="#">Business Intelligence</a></li>
+        <li><a href="#">Accelerators</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">Products</a>
+      <ul class="dropdown-content">
+        <li><a href="#">Kon verto</a></li>
+        <li><a href="#">Ct visa</a></li>
+        <li><a href="#">Puff</a></li>
+        <li><a href="#">CTVMS</a></li>
+        <li><a href="#">CT Passport</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">About Us</a>
+      <ul class="dropdown-content">
+        <li><a href="#">Investor</a></li>
+        <li><a href="#">Get to Know Us</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#">Industry</a></li>
+  </ul>
+</nav>
+
+      <button class="toggle-btn" onclick="toggleDarkMode()">! Toggle Mode</button>
     </div>
   </header>
 
@@ -213,27 +329,27 @@
   <div class="container">
     <!-- Main Content -->
     <div class="main-content">
-      <h2>Welcome to MyWebsite</h2>
-      <p>This modern layout adapts visually based on your preference. Built using a color palette designed for clarity and comfort.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id justo vel arcu fermentum fermentum. Duis eget commodo sapien.</p>
-      <a href="#" class="cta">Get Started</a>
+      <h2>Welcome to Celebal Technologies</h2>
+      <p>Founded with a bold vision to empower enterprises, Celebal Technologies combines future-focused approach with a proactive leadership mindset to revolutionize enterprises from top to bottom. As a leader in AI, Cloud, and Data Engineering solutions, we experiment with unconventional methods to bring innovation and deliver impactful results in the Data & AI space.</p>
+      
+      <a href="https://www.celebaltech.com/" class="cta" target="_blank" rel="noopener">Get Started</a>
     </div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
       <h3>Latest Updates</h3>
       <ul>
-        <li>✨ New: Dark Mode Toggle</li>
-        <li>🧠 UX Tips for 2025</li>
-        <li>📖 Guide: CSS Grid Explained</li>
-        <li>🎯 Productivity Tools Comparison</li>
+        <li><a href="https://celebaltech.com/partnership/service-partners" target="_blank">Service Partners</a></li>
+         <li><a href="https://celebaltech.com/partnership/solution-partners" target="_blank">Solution Partners</a></li>
+         <li><a href="https://celebaltech.com/about-us/resources/life-at-celebal" target="_blank">Life at Celebal</a></li>
+        <li><a href="https://celebaltech.com/contact-us" target="_blank">Become a Client</a></li>
       </ul>
     </aside>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 MyWebsite. Crafted with clarity and purpose.</p>
+    <p>&copy; 2025 Gaurav_Shinde. Celebal Technologies.</p>
   </footer>
 
   <!-- JavaScript for Dark Mode -->
