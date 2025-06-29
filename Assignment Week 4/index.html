@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Modern Responsive Layout</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celebal Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #fdfdfd;
@@ -16,7 +16,6 @@
       --card-bg: #fff;
       --sidebar-bg: #f6f6f6;
     }
-
     body.dark {
       --bg: #1a1a2e;
       --text: #f1f1f1;
@@ -28,144 +27,59 @@
       --sidebar-bg: #2e2e4d;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
-      scroll-behavior: smooth;
-      transition: background 0.4s ease, color 0.4s ease;
+      transition: 0.3s;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
     header {
       background: var(--nav-bg);
       color: var(--nav-link);
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    /* Main nav styling */
-nav ul.main-nav {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  position: relative;
-}
-
-nav ul.main-nav > li {
-  position: relative;
-}
-
-nav ul.main-nav > li > a {
-  color: var(--nav-link);
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-nav ul.main-nav > li > a:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* Dropdown */
-.dropdown-content {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  z-index: 999;
-  padding: 8px 0;
-}
-
-.dropdown-content li {
-  padding: 0;
-}
-
-.dropdown-content li a {
-  display: block;
-  padding: 10px 16px;
-  color: var(--text);
-  font-weight: 400;
-  white-space: nowrap;
-}
-
-.dropdown-content li a:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: flex;
-}
-
-/* Responsive fixes */
-@media (max-width: 768px) {
-  nav ul.main-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background: none;
-    padding: 0;
-  }
-
-  .dropdown-content li a {
-    padding-left: 24px;
-  }
-}
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-    }
-
+    .logo img { height: 32px; vertical-align: middle; margin-right: 10px; }
     nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
-
-    nav ul li a {
+    nav li { position: relative; }
+    nav a {
       color: var(--nav-link);
-      font-weight: 500;
+      text-decoration: none;
       padding: 8px 12px;
+      display: inline-block;
       border-radius: 6px;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
+    nav a:hover { background: var(--accent); color: #fff; }
 
-    nav ul li a:hover {
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 38px;
+      left: 0;
+      background: var(--card-bg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      min-width: 220px;
+      z-index: 10;
+      flex-direction: column;
+    }
+    .dropdown:hover .dropdown-content { display: flex; }
+    .dropdown-content a {
+      padding: 10px 16px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover {
       background: var(--accent);
       color: #fff;
     }
@@ -177,67 +91,44 @@ nav ul.main-nav > li > a:hover {
       padding: 8px 14px;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: 500;
-      margin-left: 15px;
-      transition: background 0.3s;
-    }
-
-    .toggle-btn:hover {
-      background: var(--accent-hover);
     }
 
     .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
     }
 
     .main-content, .sidebar {
       background: var(--card-bg);
       padding: 24px;
       border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, background 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
-    .main-content h2 {
+    .main-content h2, .sidebar h3 {
       color: var(--accent);
       margin-bottom: 12px;
     }
-
-    .main-content .cta {
-      margin-top: 20px;
+    .cta {
       display: inline-block;
+      margin-top: 16px;
       background: var(--accent);
-      color: white;
-      padding: 10px 20px;
+      color: #fff;
+      padding: 10px 18px;
       border-radius: 6px;
-      font-weight: 500;
-      transition: 0.3s;
+      text-decoration: none;
     }
-
-    .main-content .cta:hover {
-      background: var(--accent-hover);
-    }
-
-    .sidebar {
-      background: var(--sidebar-bg);
-    }
-
-    .sidebar h3 {
-      margin-bottom: 15px;
-      color: var(--accent);
-    }
+    .cta:hover { background: var(--accent-hover); }
 
     .sidebar ul {
       list-style: none;
+      padding-left: 0;
     }
-
     .sidebar li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       padding: 10px;
       background: var(--card-bg);
       border-left: 4px solid var(--accent);
@@ -252,112 +143,83 @@ nav ul.main-nav > li > a:hover {
       margin-top: 40px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-
       nav ul {
         flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
       }
-
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
+      .container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="nav-container">
-      <div class="logo">
-        <img src="celebaltechnologies_logo.jpeg" alt="Celebal Technologies" style="height:32px; vertical-align:middle; margin-right:10px;">
-        Celebal Technologies
-      </div>
-      <nav>
-  <ul class="main-nav">
-    <li class="dropdown">
-      <a href="#">Services</a>
-      <ul class="dropdown-content">
-        <li><a href="#">Data Engineering</a></li>
-        <li><a href="#">AI / ML</a></li>
-        <li><a href="#">Application Modernization</a></li>
-        <li><a href="#">Biz Apps</a></li>
-        <li><a href="#">Enterprise Data Analytics</a></li>
-        <li><a href="#">Cloud Infrastructure & Security</a></li>
-        <li><a href="#">Enterprise Integration</a></li>
-        <li><a href="#">Business Intelligence</a></li>
-        <li><a href="#">Accelerators</a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown">
-      <a href="#">Products</a>
-      <ul class="dropdown-content">
-        <li><a href="#">Kon verto</a></li>
-        <li><a href="#">Ct visa</a></li>
-        <li><a href="#">Puff</a></li>
-        <li><a href="#">CTVMS</a></li>
-        <li><a href="#">CT Passport</a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown">
-      <a href="#">About Us</a>
-      <ul class="dropdown-content">
-        <li><a href="#">Investor</a></li>
-        <li><a href="#">Get to Know Us</a></li>
-        <li><a href="#">Resources</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#">Industry</a></li>
-  </ul>
-</nav>
-
-      <button class="toggle-btn" onclick="toggleDarkMode()">! Toggle Mode</button>
+    <div class="logo">
+      <img src="celebaltechnologies_logo.jpeg" alt="Celebal Technologies" />
+      Celebal Technologies
     </div>
+    <nav>
+      <ul>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <div class="dropdown-content">
+            <a href="#">Data Engineering</a>
+            <a href="#">AI / ML</a>
+            <a href="#">Application Modernization</a>
+            <a href="#">Biz Apps</a>
+            <a href="#">Enterprise Data Analytics</a>
+            <a href="#">Cloud Infrastructure</a>
+            <a href="#">Enterprise Integration</a>
+            <a href="#">Business Intelligence</a>
+            <a href="#">Accelerators</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <div class="dropdown-content">
+            <a href="#">Kon verto</a>
+            <a href="#">Ct visa</a>
+            <a href="#">Puff</a>
+            <a href="#">CTVMS</a>
+            <a href="#">CT Passport</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">About Us</a>
+          <div class="dropdown-content">
+            <a href="#">Investor</a>
+            <a href="#">Get to Know Us</a>
+            <a href="#">Resources</a>
+          </div>
+        </li>
+        <li><a href="#">Industry</a></li>
+      </ul>
+    </nav>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌙 Mode</button>
   </header>
 
-  <!-- Main Layout -->
   <div class="container">
-    <!-- Main Content -->
     <div class="main-content">
       <h2>Welcome to Celebal Technologies</h2>
       <p>Founded with a bold vision to empower enterprises, Celebal Technologies combines future-focused approach with a proactive leadership mindset to revolutionize enterprises from top to bottom. As a leader in AI, Cloud, and Data Engineering solutions, we experiment with unconventional methods to bring innovation and deliver impactful results in the Data & AI space.</p>
-      
-      <a href="https://www.celebaltech.com/" class="cta" target="_blank" rel="noopener">Get Started</a>
+      <a class="cta" href="https://www.celebaltech.com/" target="_blank">Get Started</a>
     </div>
 
-    <!-- Sidebar -->
     <aside class="sidebar">
       <h3>Latest Updates</h3>
       <ul>
         <li><a href="https://celebaltech.com/partnership/service-partners" target="_blank">Service Partners</a></li>
-         <li><a href="https://celebaltech.com/partnership/solution-partners" target="_blank">Solution Partners</a></li>
-         <li><a href="https://celebaltech.com/about-us/resources/life-at-celebal" target="_blank">Life at Celebal</a></li>
+        <li><a href="https://celebaltech.com/partnership/solution-partners" target="_blank">Solution Partners</a></li>
+        <li><a href="https://celebaltech.com/about-us/resources/life-at-celebal" target="_blank">Life at Celebal</a></li>
         <li><a href="https://celebaltech.com/contact-us" target="_blank">Become a Client</a></li>
       </ul>
     </aside>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Gaurav_Shinde. Celebal Technologies.</p>
   </footer>
-
-  <!-- JavaScript for Dark Mode -->
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
-
 </body>
 </html>
