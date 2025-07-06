@@ -2,40 +2,242 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive Animated Button</title>
+  <title>Interactive Landing Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --accent: #8e44ad;
+      --accent-light: #c084fc;
+      --bg-light: #f9f5ff;
+      --bg-dark: #2c1e3d;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      height: 100vh;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg-light), #fff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .features {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at top left, #f4e2d8, #ba5370);
-      font-family: 'Segoe UI', sans-serif;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature-card {
+      flex: 1 1 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* BUTTON SECTION */
+    .center {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #fdf4ff, #fce7f3);
     }
 
     .animated-btn {
-      padding: 16px 36px;
+      padding: 16px 40px;
       font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      font-weight: 500;
+      color: white;
+      background: linear-gradient(135deg, #6a0dad, #8e44ad);
       border: none;
       border-radius: 12px;
       cursor: pointer;
       outline: none;
-      box-shadow: 0 0 0 rgba(106, 13, 173, 0.5);
-      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
-      animation: pulse 2s infinite;
-      position: relative;
+      transition: all 0.3s ease;
+      animation: pulse 2.2s infinite;
+      box-shadow: 0 0 0 rgba(138, 43, 226, 0.5);
     }
 
-    
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(106, 13, 173, 0.4);
+    }
+
+    .animated-btn:active {
+      transform: scale(0.96);
+      background: linear-gradient(135deg, #4b0082, #6a0dad);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(138, 43, 226, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+    }
+
+    .message {
+      margin-top: 20px;
+      background: #fff;
+      color: var(--accent);
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+      font-size: 16px;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .message.show {
+      display: inline-block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .disabled {
+      background: #aaa !important;
+      cursor: not-allowed;
+      animation: none;
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <h1>Welcome to Celebal Technologies</h1>
+    <p>We Turn Your Hurdles into Decisive Solutions.</p>
+  </header>
+
+  <!-- FEATURES SECTION -->
+  <section class="section">
+    <h2>What We Offer</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>⚡ Fast</h3>
+        <p>Lightning fast load times and smooth animations to enhance user experience.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎨 Stylish</h3>
+        <p>Modern and beautiful designs using clean UI and bold visuals.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🧠 Smart</h3>
+        <p>Interactive buttons with built-in JavaScript functionality and feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="center">
+    <h2>Try Our Magic Button</h2>
+    <button class="animated-btn" id="magicBtn" onclick="handleClick()">Click Me</button>
+    <div id="msg" class="message"></div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <h2>About Celebal Tech</h2>
+    <p>Founded with a bold vision to empower enterprises, Celebal Technologies combines future-focused approach with a proactive leadership mindset to revolutionize enterprises from top to bottom. As a leader in AI, Cloud, and Data Engineering solutions, we experiment with unconventional methods to bring innovation and deliver impactful results in the Data & AI space.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 CelebalTech | Built by Gaurav Shinde | All rights reserved.
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const btn = document.getElementById("magicBtn");
+    const msg = document.getElementById("msg");
+
+    function handleClick() {
+      showMessage("🎉 You triggered the magic!");
+      btn.disabled = true;
+      btn.classList.add("disabled");
+      btn.textContent = "Processing...";
+
+      const audio = new Audio("https://www.myinstants.com/media/sounds/magic.mp3");
+      audio.play().catch(() => {}); // Avoids error if blocked
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.classList.remove("disabled");
+        btn.textContent = "Click Me Again";
+        hideMessage();
+      }, 2000);
+    }
+
+    function showMessage(text) {
+      msg.textContent = text;
+      msg.classList.add("show");
+    }
+
+    function hideMessage() {
+      msg.classList.remove("show");
+    }
+  </script>
 
 </body>
 </html>
