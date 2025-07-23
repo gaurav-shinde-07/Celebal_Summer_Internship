@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website with Login & Registration Form</title>
+    <title>CelebalTech | Login & Registration</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Unicons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   </head>
   <body>
-    <!-- Header -->
     <header class="header">
       <nav class="nav">
-        <a href="#" class="nav_logo">CelebalTech</a>
+        <a href="#" class="nav_logo" style="display: flex; align-items: center; font-weight: bold; font-size: 1.2rem;">
+          <img src="celebal.png" alt="CelebalTech Logo" style="height: 32px; margin-right: 8px;" />
+          CelebalTech
+        </a>
         <ul class="nav_items">
           <li class="nav_item">
             <a href="#" class="nav_link">Home</a>
@@ -26,13 +26,15 @@
         <button class="button" id="form-open">Login</button>
       </nav>
     </header>
-    <!-- Home -->
+
     <section class="home">
       <div class="form_container">
         <i class="uil uil-times form_close"></i>
-        <!-- Login From -->
+        <div id="message" class="message"></div>
+
+        <!-- Login Form -->
         <div class="form login_form">
-          <form action="#">
+          <form id="loginForm">
             <h2>Login</h2>
             <div class="input_box">
               <input type="email" placeholder="Enter your email" required />
@@ -54,9 +56,10 @@
             <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
           </form>
         </div>
-        <!-- Signup From -->
+
+        <!-- Signup Form -->
         <div class="form signup_form">
-          <form action="#">
+          <form id="signupForm">
             <h2>Signup</h2>
             <div class="input_box">
               <input type="email" placeholder="Enter your email" required />
@@ -78,6 +81,7 @@
         </div>
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>
