@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Commands Explained</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #ffea00;
+      animation: fadeIn 1.5s ease;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .card h2 {
+      font-size: 1.4em;
+      margin-bottom: 12px;
+      color: #ffcc00;
+    }
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #00ffea;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Git Commands and Scenarios</h1>
+
+    <div class="card">
+      <h2>1️⃣ Stage and Commit All Changes</h2>
+      <pre>git add .
+git commit -m "feat: update login and registration form UI/UX and add Firebase integration"</pre>
+    </div>
+
+    <div class="card">
+      <h2>2️⃣ Move Commits to Correct Branch</h2>
+      <pre>git checkout -b correct-branch
+# commits follow to new branch
+
+git checkout wrong-branch
+git reset --hard HEAD~n
+# Replace n with number of commits to undo
+git push origin wrong-branch --force</pre>
+    </div>
+
+    <div class="card">
+      <h2>3️⃣ Create, Commit, and Push a New Branch</h2>
+      <pre>git checkout main
+git pull origin main
+git checkout -b feature/my-feature
+# Make changes
+git add .
+git commit -m "feat: add new feature"
+git push -u origin feature/my-feature</pre>
+    </div>
+
+    <div class="card">
+      <h2>4️⃣ Contribute to an Open Source Project</h2>
+      <pre># Fork → Clone
+https://github.com/your-username/project.git
+
+git checkout -b fix/issue-123
+# Make changes
+git add .
+git commit -m "fix: correct layout bug"
+git push origin fix/issue-123
+# Create PR on GitHub</pre>
+    </div>
+
+    <div class="card">
+      <h2>5️⃣ Resolve Merge Conflicts</h2>
+      <pre>git checkout main
+git pull origin main
+git checkout your-branch
+git merge main
+# Resolve conflicts manually
+# Then:
+git add .
+git commit</pre>
+    </div>
+
+    <div class="card">
+      <h2>6️⃣ Create Feature Branch from Latest Main</h2>
+      <pre>git checkout main
+git pull origin main
+git checkout -b feature/awesome-update</pre>
+    </div>
+
+    <div class="card">
+      <h2>7️⃣ Revert to a Specific Commit</h2>
+      <pre>git log
+# Copy the commit hash
+git reset --hard &lt;commit-hash&gt;
+git push origin HEAD --force</pre>
+    </div>
+
+    <div class="card">
+      <h2>8️⃣ Restore Deleted File from Previous Commit</h2>
+      <pre>git log -- &lt;file-path&gt;
+git checkout &lt;commit-hash&gt;^ -- &lt;file-path&gt;
+git add &lt;file-path&gt;
+git commit -m "fix: restore deleted file"</pre>
+    </div>
+  </div>
+</body>
+</html>
